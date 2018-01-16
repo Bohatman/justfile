@@ -1,0 +1,39 @@
+ Random random = new Random();
+       int[] data = new int[50];
+       for(int i =0;i<50;i++){
+           data[i]=random.nextInt(100);
+       }
+       int count=0;
+       for(int x=0;x<50;x++){
+       for(int y=0;y<50;y++){
+           if(data[x]+data[y]==37){
+               System.out.println(data[x]+" "+data[y]);
+               count++;
+           }
+       }
+       }
+       ArrayList<Integer> even = new ArrayList<Integer>();
+      ArrayList<Integer> odd = new ArrayList<Integer>();
+       if(count==0){System.out.println("Don't have any pair of data match");}
+          for(int u =0;u<50;u++){
+           if(data[u]%2==0){
+               even.add(data[u]);
+           }
+           else{
+               odd.add(data[u]);
+           }
+       }
+          System.out.println("-------------------------------------------------------------------------------------");
+          for(int o: even){
+              System.out.print(o+" ");
+          }
+           System.out.println();
+          System.out.println("-------------------------------------------------------------------------------------");
+          for(int o: odd){
+              System.out.print(o+" ");
+          }
+           Collections.sort(even);
+           Collections.sort(odd);
+           System.out.println();
+           System.out.println("Max even "+even.get(even.size()-1));
+           System.out.println("Max odd "+odd.get(odd.size()-1));
